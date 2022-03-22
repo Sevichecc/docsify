@@ -8,13 +8,29 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <!-- <link rel="stylesheet" href="/style.css"> -->
+  <style>
+    :root {
+      /* Tab blocks */
+      --docsifytabs-border-color: #ededed;
+      --docsifytabs-border-px: 1px;
+      --docsifytabs-border-radius-px: ;
+      --docsifytabs-margin: 1.5em 0;
+
+      /* Tabs */
+      --docsifytabs-tab-background: #f8f8f8;
+      --docsifytabs-tab-background--active: var(--docsifytabs-content-background);
+      --docsifytabs-tab-color: #999;
+      --docsifytabs-tab-color--active: inherit;
+      --docsifytabs-tab-highlight-px: 3px;
+      --docsifytabs-tab-highlight-color: var(--theme-color, currentColor);
+      --docsifytabs-tab-padding: 0.6em 1em;
+
+      /* Tab content */
+      --docsifytabs-content-background: inherit;
+      --docsifytabs-content-padding: 1.5rem;
+    }
+  </style>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
-  <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
-  <link rel="stylesheet" href="unpkg.com/@fortawesome/fontawesome-free/css/fontawesome.css" />
-  <link rel="stylesheet" href="unpkg.com/@fortawesome/fontawesome-free/css/brands.css" />
-  <link rel="stylesheet" href="unpkg.com/@fortawesome/fontawesome-free/css/regular.css" />
-  <link rel="stylesheet" href="unpkg.com/@fortawesome/fontawesome-free/css/solid.css" />
   <link rel="stylesheet" href="//unpkg.com/docsify-link-preview/src/style.css" />
 
 </head>
@@ -29,7 +45,7 @@
       // repo: 'https://github.com/sevichee/docsify-notes',
       // hideSidebar: true,
       auto2top: true,
-      themeColor: '#AE887B',
+      themeColor: '#65a30d',
       executeScript: true,
       mergeNavbar: true,
       formatUpdated: '{MM}/{DD} {HH}:{mm}',
@@ -40,7 +56,7 @@
 
       // logo: 'static/logo1.png',
       autoHeader: true,
-      subMaxLevel: 2,
+      subMaxLevel: 3,
       relativePath: true,
       topMargin: 90,
       copyCode: {
@@ -74,20 +90,11 @@
       //   language: 'chinese'
       // }
 
-      plugins: [
-        EditOnGithubPlugin.create('https://github.com/sevichee/docsify-notes/blob/main/docs/',
-          null,
-          '📝 Edit'),
-        function (hook, vm) {
-          // parse twemoji
-          hook.doneEach(function () {
-            twemoji.parse(document);
-          });
-        },
-      ],
-      'flexible-alerts': {
-        style: 'flat'
-      },
+      // plugins: [
+      //   EditOnGithubPlugin.create('https://github.com/sevichee/docsify-notes/blob/main/docs/',
+      //     null,
+      //     '📝 Edit'),
+      // ],
 
       timeUpdater: {
         text: ">last update time: {docsify-updated}",
@@ -102,9 +109,21 @@
         host: 'https://cusdis.com', // change the host if you are using self-hosted Cusdis
         appId: 'c9c2456d-aae0-4bb2-9f95-45bcb9b9a92a',
       },
+
+      tabs: {
+        persist: true,      // default
+        sync: true,      // default
+        theme: 'classic', // default
+        tabComments: true,      // default
+        tabHeadings: true       // default
+      }
+    }
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
     }
   </script>
   <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
@@ -115,23 +134,17 @@
   <!-- <script src="//unpkg.com/docsify-count/dist/countable.js"></script> -->
   <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <!-- <script async defer data-website-id="806c13d6-54b9-411e-96fd-cf91d942aa25"
-    src="https://hexoverc.vercel.app/umami.js"></script> -->
-  <!-- PDFObject.js is a required dependency of this plugin -->
+    src="https://hexoverc.vercel.app/vercel.js"></script> -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
-  <!-- This is the source code of the pdf embed plugin -->
-  <script src="path-to-file/docsify-pdf-embed.js"></script>
-  <script src="//unpkg.com/docsify-fontawesome/dist/docsify-fontawesome.min.js"></script>
-  <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
-  <script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
-  <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true });</script>
   <script src="//cdn.jsdelivr.net/gh/TaQini/docsify-twemoji@master/twemoji.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-pangu/lib/pangu.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-wikilink@1"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-updated@1/src/time-updater.min.js"></script>
   <script src="//unpkg.com/docsify-link-preview/src/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
   <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/disqus.min.js"></script> -->
   <script src="https://cusdis.com/js/cusdis.docsify.js"></script>
+
 
 </body>
 

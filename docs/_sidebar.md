@@ -1,8 +1,21 @@
 - [**IFE 百度前端技术学园**](/IFE/README.md)
 
-  - [HTML](JavaScript/)
+  - **HTML**
     - [文字排版综合任务练习](/IFE/HTML/day01-02.md)
-  - [CSS](zh-cn/2022-03-03-Narcissistic-number.md)
-  - [JavaScript](zh-cn/2022-03-03-Narcissistic-number.md)
-
-- [关于我](http://seviche.cc)
+    - [制作一个奶茶点餐页面](/IFE/HTML/day03-04.md)
+    - [响应式图像](/IFE/HTML/day05-06.md)
+  - **CSS**
+    - [给你的简历增添一些色彩](/IFE/CSS/day01-02.md)
+    - [精准定位你想美化的元素](/IFE/CSS/day03-04.md)
+    - [制作一些有趣的效果](/IFE/CSS/day05-06.md)
+    - [让盒子浮动起来吧](/IFE/CSS/day07-08.md)
+    - [浮动实战任务](/IFE/CSS/day09-10.md)
+    - [什么是层定位](/IFE/CSS/day11-12.md)
+  - **JavaScript**
+    - [数据类型和变量](/IFE/JavaScript/day01-02.md)
+    - [使用函数创建模块化代码](/IFE/JavaScript/day03-04.md)
+    - [“如果”可以“重来”](/IFE/JavaScript/day05-06.md)
+    - [操作字符串对象](/IFE/JavaScript/day07-08.md)
+    - [JavaScript 数组基础](/IFE/JavaScript/day07-08array.md)
+    - [灵活的操作 JavaScript 数组](/IFE/JavaScript/day09-10array.md)
+    - [队列和栈](/IFE/JavaScript/day09-10queue.md)
