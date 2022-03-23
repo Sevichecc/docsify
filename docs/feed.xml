@@ -6,6 +6,254 @@
   <description>鱼的前端打怪笔记</description>
    
   <item>
+    <title><![CDATA[ 题目]]></title>
+    <link>https://notes.seviche.cc/#/IFE/CSS/day11-12</link>
+    <guid isPermaLink="false">https://notes.seviche.cc/#/IFE/CSS/day11-12</guid>
+    <description><![CDATA[<h2 id="题目">题目</h2>
+<p><a href="http://ife.baidu.com/csspart/position.html">什么是层定位</a></p>
+<h2 id="解码">解码</h2>
+<!-- tabs:start -->
+<h4 id="task1"><strong>Task1</strong></h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">&lt;style&gt;</span></a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="op">*</span> {</a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="kw">margin</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-4" title="4">    <span class="kw">padding</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-5" title="5">    <span class="kw">box-sizing</span>: <span class="dv">border-box</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-6" title="6">    <span class="kw">color</span>: <span class="cn">black</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-7" title="7">  }</a>
+<a class="sourceLine" id="cb1-8" title="8"></a>
+<a class="sourceLine" id="cb1-9" title="9">  figure {</a>
+<a class="sourceLine" id="cb1-10" title="10">    <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-11" title="11">    <span class="kw">top</span>: <span class="dv">50</span><span class="dt">%</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-12" title="12">    <span class="kw">left</span>: <span class="dv">50</span><span class="dt">%</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-13" title="13">    <span class="kw">transform</span>: <span class="fu">translate(</span><span class="dv">-50</span><span class="dt">%</span><span class="op">,</span> <span class="dv">-50</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-14" title="14">  }</a>
+<a class="sourceLine" id="cb1-15" title="15"></a>
+<a class="sourceLine" id="cb1-16" title="16">  figcaption {</a>
+<a class="sourceLine" id="cb1-17" title="17">    <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-18" title="18">    <span class="kw">top</span>: <span class="dv">50</span><span class="dt">%</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-19" title="19">    <span class="kw">left</span>: <span class="dv">50</span><span class="dt">%</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-20" title="20">    <span class="kw">transform</span>: <span class="fu">translate(</span><span class="dv">-50</span><span class="dt">%</span><span class="op">,</span> <span class="dv">-50</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-21" title="21"></a>
+<a class="sourceLine" id="cb1-22" title="22">    <span class="kw">background-color</span>: <span class="fu">rgba(</span><span class="dv">255</span><span class="op">,</span> <span class="dv">255</span><span class="op">,</span> <span class="dv">255</span><span class="op">,</span> <span class="dv">0.712</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-23" title="23">    <span class="kw">padding</span>: <span class="dv">40</span><span class="dt">px</span> <span class="dv">80</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-24" title="24"></a>
+<a class="sourceLine" id="cb1-25" title="25">    <span class="kw">text-align</span>: <span class="dv">center</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-26" title="26">    <span class="kw">display</span>: flex<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-27" title="27">    <span class="kw">flex-direction</span>: column<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-28" title="28">    <span class="kw">gap</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-29" title="29">  }</a>
+<a class="sourceLine" id="cb1-30" title="30"></a>
+<a class="sourceLine" id="cb1-31" title="31">  figcaption a {</a>
+<a class="sourceLine" id="cb1-32" title="32">    <span class="kw">padding</span>: <span class="dv">5</span><span class="dt">px</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-33" title="33">    <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-34" title="34">    <span class="kw">border-radius</span>: <span class="dv">2</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-35" title="35">    <span class="kw">text-decoration</span>: <span class="dv">none</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-36" title="36">    <span class="kw">text-transform</span>: <span class="dv">uppercase</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-37" title="37">  }</a>
+<a class="sourceLine" id="cb1-38" title="38"></a>
+<a class="sourceLine" id="cb1-39" title="39">  img {</a>
+<a class="sourceLine" id="cb1-40" title="40">    <span class="kw">width</span>: <span class="dv">800</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-41" title="41">    <span class="kw">border-radius</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-42" title="42">  }</a>
+<a class="sourceLine" id="cb1-43" title="43"><span class="kw">&lt;/style&gt;</span></a>
+<a class="sourceLine" id="cb1-44" title="44"></a>
+<a class="sourceLine" id="cb1-45" title="45"><span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb1-46" title="46">  <span class="kw">&lt;figure&gt;</span></a>
+<a class="sourceLine" id="cb1-47" title="47">    <span class="kw">&lt;figcaption&gt;</span></a>
+<a class="sourceLine" id="cb1-48" title="48">      <span class="kw">&lt;h2&gt;</span>Beauty Makeup<span class="kw">&lt;/h2&gt;</span></a>
+<a class="sourceLine" id="cb1-49" title="49">      <span class="kw">&lt;p&gt;</span></a>
+<a class="sourceLine" id="cb1-50" title="50">        Every Girl loves to be beautiful.</a>
+<a class="sourceLine" id="cb1-51" title="51">        <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb1-52" title="52">        As the saying goes, there are no ugly Girl in the world.Only lazy women</a>
+<a class="sourceLine" id="cb1-53" title="53">      <span class="kw">&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb1-54" title="54">      <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Get in Touch<span class="kw">&lt;/a&gt;</span></a>
+<a class="sourceLine" id="cb1-55" title="55">    <span class="kw">&lt;/figcaption&gt;</span></a>
+<a class="sourceLine" id="cb1-56" title="56">    <span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;tower.jpg&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb1-57" title="57">  <span class="kw">&lt;/figure&gt;</span></a>
+<a class="sourceLine" id="cb1-58" title="58"><span class="kw">&lt;/body&gt;</span></a></code></pre></div>
+<h4 id="task-2"><strong>Task 2</strong></h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;style&gt;</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="co">/* position */</span></a>
+<a class="sourceLine" id="cb2-3" title="3">  <span class="op">*</span> {</a>
+<a class="sourceLine" id="cb2-4" title="4">    <span class="kw">padding</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-5" title="5">    <span class="kw">margin</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-6" title="6">    <span class="kw">text-align</span>: <span class="dv">center</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">  }</a>
+<a class="sourceLine" id="cb2-8" title="8"></a>
+<a class="sourceLine" id="cb2-9" title="9">  <span class="fu">.left</span> {</a>
+<a class="sourceLine" id="cb2-10" title="10">    <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-11" title="11">    <span class="kw">background-color</span>: <span class="cn">#f1f1b8</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-12" title="12">    <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-13" title="13">    <span class="kw">height</span>: <span class="dv">100</span><span class="dt">vh</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-14" title="14">    <span class="co">/* height: 500px */</span></a>
+<a class="sourceLine" id="cb2-15" title="15">  }</a>
+<a class="sourceLine" id="cb2-16" title="16"></a>
+<a class="sourceLine" id="cb2-17" title="17">  <span class="fu">.middle</span> {</a>
+<a class="sourceLine" id="cb2-18" title="18">    <span class="kw">background-color</span>: <span class="cn">#cdf1b8</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-19" title="19">    <span class="kw">margin</span>: <span class="dv">0</span> <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-20" title="20">    <span class="kw">height</span>: <span class="dv">100</span><span class="dt">vh</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-21" title="21">    <span class="co">/* height: 800px*/</span></a>
+<a class="sourceLine" id="cb2-22" title="22">  }</a>
+<a class="sourceLine" id="cb2-23" title="23"></a>
+<a class="sourceLine" id="cb2-24" title="24">  <span class="fu">.right</span> {</a>
+<a class="sourceLine" id="cb2-25" title="25">    <span class="kw">background-color</span>: <span class="cn">#b8d3f1</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-26" title="26">    <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-27" title="27">    <span class="kw">height</span>: <span class="dv">100</span><span class="dt">vh</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-28" title="28">    <span class="co">/* height: 500px */</span></a>
+<a class="sourceLine" id="cb2-29" title="29"></a>
+<a class="sourceLine" id="cb2-30" title="30">    <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-31" title="31">    <span class="kw">left</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-32" title="32">    <span class="kw">top</span>: <span class="dv">0</span><span class="dt">%</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-33" title="33">    <span class="kw">transform</span>: translateX(<span class="dv">-100</span><span class="dt">%</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-34" title="34">  }</a>
+<a class="sourceLine" id="cb2-35" title="35"><span class="kw">&lt;/style&gt;</span></a>
+<a class="sourceLine" id="cb2-36" title="36"></a>
+<a class="sourceLine" id="cb2-37" title="37"><span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb2-38" title="38">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;left&quot;</span><span class="kw">&gt;</span>Left<span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-39" title="39">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;middle&quot;</span><span class="kw">&gt;</span>Middle<span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-40" title="40">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;right&quot;</span><span class="kw">&gt;</span>Right<span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-41" title="41"><span class="kw">&lt;/body&gt;</span></a></code></pre></div>
+<h4 id="task-3"><strong>Task 3</strong></h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb3-1" title="1"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-3" title="3">  <span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb3-4" title="4">    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb3-5" title="5">    <span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;X-UA-Compatible&quot;</span><span class="ot"> content=</span><span class="st">&quot;IE=edge&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb3-6" title="6">    <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb3-7" title="7">    <span class="kw">&lt;style&gt;</span></a>
+<a class="sourceLine" id="cb3-8" title="8">      <span class="op">*</span> {</a>
+<a class="sourceLine" id="cb3-9" title="9">        <span class="kw">margin</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-10" title="10">        <span class="kw">padding</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-11" title="11">        <span class="kw">box-sizing</span>: <span class="dv">border-box</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-12" title="12">      }</a>
+<a class="sourceLine" id="cb3-13" title="13"></a>
+<a class="sourceLine" id="cb3-14" title="14">      <span class="fu">.logo</span> {</a>
+<a class="sourceLine" id="cb3-15" title="15">        <span class="kw">font-size</span>: <span class="dv">2</span><span class="dt">rem</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-16" title="16">        <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-17" title="17">        <span class="kw">position</span>: <span class="dv">relative</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-18" title="18">      }</a>
+<a class="sourceLine" id="cb3-19" title="19"></a>
+<a class="sourceLine" id="cb3-20" title="20">      <span class="fu">.sticky</span> {</a>
+<a class="sourceLine" id="cb3-21" title="21">        <span class="kw">position</span>: <span class="dv">fixed</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-22" title="22">        <span class="kw">top</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-23" title="23">        <span class="kw">bottom</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-24" title="24">        <span class="kw">padding-top</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-25" title="25">        <span class="kw">padding-bottom</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-26" title="26">        <span class="kw">width</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-27" title="27">        <span class="kw">height</span>: <span class="dv">4</span><span class="dt">rem</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-28" title="28">      }</a>
+<a class="sourceLine" id="cb3-29" title="29"></a>
+<a class="sourceLine" id="cb3-30" title="30">      nav {</a>
+<a class="sourceLine" id="cb3-31" title="31">        <span class="kw">background-color</span>: <span class="fu">rgb(</span><span class="dv">26</span><span class="op">,</span> <span class="dv">26</span><span class="op">,</span> <span class="dv">26</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-32" title="32">        <span class="kw">display</span>: flex<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-33" title="33">        <span class="kw">gap</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-34" title="34">        <span class="kw">flex</span>: <span class="dv">1</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-35" title="35">        <span class="kw">width</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-36" title="36">        <span class="kw">height</span>: <span class="dv">4</span><span class="dt">rem</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-37" title="37">        <span class="kw">align-items</span>: <span class="dv">center</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-38" title="38">        <span class="kw">justify-content</span>: <span class="dv">center</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-39" title="39">      }</a>
+<a class="sourceLine" id="cb3-40" title="40"></a>
+<a class="sourceLine" id="cb3-41" title="41">      nav a {</a>
+<a class="sourceLine" id="cb3-42" title="42">        <span class="kw">text-decoration</span>: <span class="dv">none</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-43" title="43">        <span class="kw">text-transform</span>: <span class="dv">uppercase</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-44" title="44">        <span class="kw">color</span>: <span class="cn">#fff</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-45" title="45">        <span class="kw">font-size</span>: <span class="dv">1.2</span><span class="dt">rem</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-46" title="46">      }</a>
+<a class="sourceLine" id="cb3-47" title="47"></a>
+<a class="sourceLine" id="cb3-48" title="48">      section {</a>
+<a class="sourceLine" id="cb3-49" title="49">        <span class="kw">display</span>: flex<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-50" title="50">        <span class="kw">flex-direction</span>: column<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-51" title="51">        <span class="kw">text-align</span>: <span class="dv">center</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-52" title="52">        <span class="kw">padding</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-53" title="53">      }</a>
+<a class="sourceLine" id="cb3-54" title="54"></a>
+<a class="sourceLine" id="cb3-55" title="55">      section<span class="in">:nth-of-type(2n)</span> {</a>
+<a class="sourceLine" id="cb3-56" title="56">        <span class="kw">background-color</span>: <span class="fu">rgb(</span><span class="dv">202</span><span class="op">,</span> <span class="dv">202</span><span class="op">,</span> <span class="dv">202</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-57" title="57">      }</a>
+<a class="sourceLine" id="cb3-58" title="58">    <span class="kw">&lt;/style&gt;</span></a>
+<a class="sourceLine" id="cb3-59" title="59"></a>
+<a class="sourceLine" id="cb3-60" title="60">    <span class="kw">&lt;title&gt;</span>Document<span class="kw">&lt;/title&gt;</span></a>
+<a class="sourceLine" id="cb3-61" title="61">  <span class="kw">&lt;/head&gt;</span></a>
+<a class="sourceLine" id="cb3-62" title="62"></a>
+<a class="sourceLine" id="cb3-63" title="63">  <span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb3-64" title="64">    <span class="kw">&lt;header&gt;</span></a>
+<a class="sourceLine" id="cb3-65" title="65">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;logo&quot;</span><span class="kw">&gt;</span>LOGO<span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-66" title="66">      <span class="kw">&lt;nav&gt;</span></a>
+<a class="sourceLine" id="cb3-67" title="67">        <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Home<span class="kw">&lt;/a&gt;</span></a>
+<a class="sourceLine" id="cb3-68" title="68">        <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>blog<span class="kw">&lt;/a&gt;</span></a>
+<a class="sourceLine" id="cb3-69" title="69">        <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>article<span class="kw">&lt;/a&gt;</span></a>
+<a class="sourceLine" id="cb3-70" title="70">        <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>contact me<span class="kw">&lt;/a&gt;</span></a>
+<a class="sourceLine" id="cb3-71" title="71">      <span class="kw">&lt;/nav&gt;</span></a>
+<a class="sourceLine" id="cb3-72" title="72">    <span class="kw">&lt;/header&gt;</span></a>
+<a class="sourceLine" id="cb3-73" title="73"></a>
+<a class="sourceLine" id="cb3-74" title="74">    <span class="kw">&lt;section&gt;</span></a>
+<a class="sourceLine" id="cb3-75" title="75">      <span class="kw">&lt;h2&gt;</span>Main Content<span class="kw">&lt;/h2&gt;</span></a>
+<a class="sourceLine" id="cb3-76" title="76">      <span class="kw">&lt;p&gt;</span></a>
+<a class="sourceLine" id="cb3-77" title="77">        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio expedita</a>
+<a class="sourceLine" id="cb3-78" title="78">        cumque consequuntur consequatur sequi placeat esse earum! Corrupti</a>
+<a class="sourceLine" id="cb3-79" title="79">        dolorum quos voluptatem consequuntur odit, velit explicabo praesentium</a>
+<a class="sourceLine" id="cb3-80" title="80">        fugiat repudiandae sed. Quam.</a>
+<a class="sourceLine" id="cb3-81" title="81">      <span class="kw">&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb3-82" title="82">    <span class="kw">&lt;/section&gt;</span></a>
+<a class="sourceLine" id="cb3-83" title="83"></a>
+<a class="sourceLine" id="cb3-84" title="84">    <span class="kw">&lt;section&gt;</span></a>
+<a class="sourceLine" id="cb3-85" title="85">      <span class="kw">&lt;h2&gt;</span>Main Content<span class="kw">&lt;/h2&gt;</span></a>
+<a class="sourceLine" id="cb3-86" title="86">      <span class="kw">&lt;p&gt;</span></a>
+<a class="sourceLine" id="cb3-87" title="87">        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio expedita</a>
+<a class="sourceLine" id="cb3-88" title="88">        cumque consequuntur consequatur sequi placeat esse earum! Corrupti</a>
+<a class="sourceLine" id="cb3-89" title="89">        dolorum quos voluptatem consequuntur odit, velit explicabo praesentium</a>
+<a class="sourceLine" id="cb3-90" title="90">        fugiat repudiandae sed. Quam.</a>
+<a class="sourceLine" id="cb3-91" title="91">      <span class="kw">&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb3-92" title="92">    <span class="kw">&lt;/section&gt;</span></a>
+<a class="sourceLine" id="cb3-93" title="93"></a>
+<a class="sourceLine" id="cb3-94" title="94">    <span class="kw">&lt;section&gt;</span></a>
+<a class="sourceLine" id="cb3-95" title="95">      <span class="kw">&lt;h2&gt;</span>Main Content<span class="kw">&lt;/h2&gt;</span></a>
+<a class="sourceLine" id="cb3-96" title="96">      <span class="kw">&lt;p&gt;</span></a>
+<a class="sourceLine" id="cb3-97" title="97">        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio expedita</a>
+<a class="sourceLine" id="cb3-98" title="98">        cumque consequuntur consequatur sequi placeat esse earum! Corrupti</a>
+<a class="sourceLine" id="cb3-99" title="99">        dolorum quos voluptatem consequuntur odit, velit explicabo praesentium</a>
+<a class="sourceLine" id="cb3-100" title="100">        fugiat repudiandae sed. Quam.</a>
+<a class="sourceLine" id="cb3-101" title="101">      <span class="kw">&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb3-102" title="102">    <span class="kw">&lt;/section&gt;</span></a>
+<a class="sourceLine" id="cb3-103" title="103"></a>
+<a class="sourceLine" id="cb3-104" title="104">    <span class="kw">&lt;section&gt;</span></a>
+<a class="sourceLine" id="cb3-105" title="105">      <span class="kw">&lt;h2&gt;</span>Main Content<span class="kw">&lt;/h2&gt;</span></a>
+<a class="sourceLine" id="cb3-106" title="106">      <span class="kw">&lt;p&gt;</span></a>
+<a class="sourceLine" id="cb3-107" title="107">        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio expedita</a>
+<a class="sourceLine" id="cb3-108" title="108">        cumque consequuntur consequatur sequi placeat esse earum! Corrupti</a>
+<a class="sourceLine" id="cb3-109" title="109">        dolorum quos voluptatem consequuntur odit, velit explicabo praesentium</a>
+<a class="sourceLine" id="cb3-110" title="110">        fugiat repudiandae sed. Quam.</a>
+<a class="sourceLine" id="cb3-111" title="111">      <span class="kw">&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb3-112" title="112">    <span class="kw">&lt;/section&gt;</span></a>
+<a class="sourceLine" id="cb3-113" title="113">    <span class="kw">&lt;script&gt;</span></a>
+<a class="sourceLine" id="cb3-114" title="114">      <span class="kw">const</span> logo <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&quot;.logo&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-115" title="115">      <span class="kw">const</span> nav <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&quot;nav&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-116" title="116"></a>
+<a class="sourceLine" id="cb3-117" title="117">      <span class="kw">const</span> obs <span class="op">=</span> <span class="kw">new</span> <span class="at">IntersectionObserver</span>(</a>
+<a class="sourceLine" id="cb3-118" title="118">        <span class="kw">function</span> (entries) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-119" title="119">          <span class="kw">const</span> [entry] <span class="op">=</span> entries<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-120" title="120">          <span class="cf">if</span> (<span class="op">!</span><span class="va">entry</span>.<span class="at">isIntersecting</span>) <span class="va">nav</span>.<span class="va">classList</span>.<span class="at">add</span>(<span class="st">&quot;sticky&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-121" title="121">          <span class="cf">else</span> <span class="va">nav</span>.<span class="va">classList</span>.<span class="at">remove</span>(<span class="st">&quot;sticky&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-122" title="122">        <span class="op">},</span></a>
+<a class="sourceLine" id="cb3-123" title="123">        <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-124" title="124">          <span class="co">// In the viewport</span></a>
+<a class="sourceLine" id="cb3-125" title="125">          <span class="dt">root</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-126" title="126">          <span class="dt">threshold</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-127" title="127">          <span class="dt">rootMargin</span><span class="op">:</span> <span class="st">&quot;-20px&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-128" title="128">        <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-129" title="129">      )<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-130" title="130">      <span class="va">obs</span>.<span class="at">observe</span>(logo)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-131" title="131">    <span class="kw">&lt;/script&gt;</span></a>
+<a class="sourceLine" id="cb3-132" title="132">  <span class="kw">&lt;/body&gt;</span></a>
+<a class="sourceLine" id="cb3-133" title="133"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+<!-- tabs:end -->
+<p><a href="https://github.com/sevichee/IFE-Practice/tree/main/Day%2011-12/CSS">Github 源码</a></p>]]></description>
+    <pubDate>Wed, 23 Mar 2022 10:51:59 +0800</pubDate>
+  </item>
+   
+  <item>
     <title><![CDATA[mg src='static/PB270039%202.JPG' sytle='width:100%'/>]]></title>
     <link>https://notes.seviche.cc/#/README</link>
     <guid isPermaLink="false">https://notes.seviche.cc/#/README</guid>
@@ -1257,155 +1505,6 @@
 <a class="sourceLine" id="cb2-30" title="30"><span class="op">}</span></a>
 <a class="sourceLine" id="cb2-31" title="31"><span class="at">temperatureBodyDetection</span>(success<span class="op">,</span> fail)<span class="op">;</span> <span class="co">/**调用打卡函数**/</span></a></code></pre></div>
 <p><a href="https://github.com/sevichee/IFE-Practice/tree/main/Day%2003-04/JavaScript">Github 源码</a></p>]]></description>
-    <pubDate>Wed, 23 Mar 2022 00:27:47 +0800</pubDate>
-  </item>
-   
-  <item>
-    <title><![CDATA[ 题目]]></title>
-    <link>https://notes.seviche.cc/#/IFE/JavaScript/day01-02</link>
-    <guid isPermaLink="false">https://notes.seviche.cc/#/IFE/JavaScript/day01-02</guid>
-    <description><![CDATA[<h2 id="题目">题目</h2>
-<h2 id="解法">解法</h2>
-<!-- tabs:start -->
-<h4 id="task-01"><strong>Task 01</strong></h4>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">const</span> weight <span class="op">=</span> <span class="dv">78</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">const</span> height <span class="op">=</span> <span class="fl">1.68</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb1-3" title="3"></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="kw">const</span> BMI <span class="op">=</span> <span class="va">Math</span>.<span class="at">round</span>(weight / height <span class="op">**</span> <span class="dv">2</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="va">console</span>.<span class="at">log</span>(<span class="vs">`BMI:</span><span class="sc">${</span>BMI<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-6" title="6"></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="kw">let</span> calcBMI <span class="op">=</span> <span class="kw">function</span> (weight<span class="op">,</span> height) <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-8" title="8">  <span class="cf">return</span> <span class="va">Math</span>.<span class="at">floor</span>(weight / <span class="va">Math</span>.<span class="at">pow</span>(height<span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="op">};</span></a>
-<a class="sourceLine" id="cb1-10" title="10"></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="va">console</span>.<span class="at">log</span>(<span class="at">calcBMI</span>(<span class="dv">78</span><span class="op">,</span> <span class="fl">1.68</span>))<span class="op">;</span></a></code></pre></div>
-<h4 id="task-02"><strong>Task 02</strong></h4>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">function</span> <span class="at">calculateSum</span>(price<span class="op">,</span> vip) <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-2" title="2">  price <span class="op">=</span> vip <span class="op">?</span> price <span class="op">*</span> <span class="fl">0.98</span> : price<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-3" title="3"></a>
-<a class="sourceLine" id="cb2-4" title="4">  <span class="cf">if</span> (price <span class="op">&gt;=</span> <span class="dv">300</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-5" title="5">    price <span class="op">-=</span> <span class="dv">30</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb2-6" title="6">  <span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> (price <span class="op">&gt;=</span> <span class="dv">200</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-7" title="7">    price <span class="op">-=</span> <span class="dv">10</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb2-8" title="8">  <span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> (price <span class="op">&gt;=</span> <span class="dv">100</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-9" title="9">    price <span class="op">-=</span> <span class="dv">5</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb2-10" title="10">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb2-11" title="11">  <span class="cf">return</span> price<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-12" title="12"><span class="op">}</span></a>
-<a class="sourceLine" id="cb2-13" title="13"></a>
-<a class="sourceLine" id="cb2-14" title="14"><span class="va">console</span>.<span class="at">log</span>(<span class="at">calculateSum</span>(<span class="dv">300</span><span class="op">,</span> <span class="kw">false</span>))<span class="op">;</span> <span class="co">//-&gt;270</span></a>
-<a class="sourceLine" id="cb2-15" title="15"><span class="va">console</span>.<span class="at">log</span>(<span class="at">calculateSum</span>(<span class="dv">300</span><span class="op">,</span> <span class="kw">true</span>))<span class="op">;</span> <span class="co">//-&gt;284</span></a></code></pre></div>
-<h4 id="task-03"><strong>Task 03</strong></h4>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">function</span> <span class="at">isNumeric</span>(num) <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">let</span> numCheck <span class="op">=</span> <span class="kw">typeof</span> num <span class="op">===</span> <span class="st">&quot;number&quot;</span> <span class="op">?</span> <span class="st">&quot;true&quot;</span> : <span class="st">&quot;false&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb3-3" title="3">  <span class="cf">return</span> numCheck<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="op">}</span></a>
-<a class="sourceLine" id="cb3-5" title="5"></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="co">//测试用例</span></a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isNumeric</span>(<span class="st">&quot;0&quot;</span>))<span class="op">;</span> <span class="co">// -&gt;false</span></a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isNumeric</span>(<span class="dv">0</span>))<span class="op">;</span> <span class="co">// -&gt;true</span></a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isNumeric</span>(<span class="kw">null</span>))<span class="op">;</span> <span class="co">// -&gt;false</span></a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isNumeric</span>(<span class="st">&quot;&quot;</span>))<span class="op">;</span> <span class="co">// -&gt;false</span></a>
-<a class="sourceLine" id="cb3-11" title="11"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isNumeric</span>(<span class="st">&quot; &quot;</span>))<span class="op">;</span> <span class="co">// -&gt;false</span></a></code></pre></div>
-<h4 id="task-04"><strong>Task 04</strong></h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">function</span> <span class="at">isUndefined</span>(arg) <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-2" title="2">  <span class="cf">if</span> (</a>
-<a class="sourceLine" id="cb4-3" title="3">    <span class="kw">typeof</span> arg <span class="op">===</span> <span class="st">&quot;undefined&quot;</span> <span class="op">||</span></a>
-<a class="sourceLine" id="cb4-4" title="4">    <span class="va">JSON</span>.<span class="at">stringify</span>(arg) <span class="op">==</span> <span class="st">&quot;{}&quot;</span> <span class="op">||</span></a>
-<a class="sourceLine" id="cb4-5" title="5">    <span class="va">JSON</span>.<span class="at">stringify</span>(arg) <span class="op">==</span> <span class="st">&quot;[]&quot;</span></a>
-<a class="sourceLine" id="cb4-6" title="6">  ) <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-7" title="7">    <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-8" title="8">  <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-9" title="9">    <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-10" title="10">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb4-11" title="11">  <span class="co">// (JSON.stringify(c)==&#39;{}</span></a>
-<a class="sourceLine" id="cb4-12" title="12">  <span class="co">// const unCheck = Number.isNaN(arg) ? true : false;</span></a>
-<a class="sourceLine" id="cb4-13" title="13">  <span class="co">// // //const unCheck = arg === undefined ? true : false;</span></a>
-<a class="sourceLine" id="cb4-14" title="14">  <span class="co">// return unCheck;</span></a>
-<a class="sourceLine" id="cb4-15" title="15"><span class="op">}</span></a>
-<a class="sourceLine" id="cb4-16" title="16"></a>
-<a class="sourceLine" id="cb4-17" title="17"><span class="kw">function</span> <span class="at">isNull</span>(arg) <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-18" title="18">  <span class="co">// if (arg === null) {</span></a>
-<a class="sourceLine" id="cb4-19" title="19">  <span class="co">//   return true;</span></a>
-<a class="sourceLine" id="cb4-20" title="20">  <span class="co">// } else {</span></a>
-<a class="sourceLine" id="cb4-21" title="21">  <span class="co">//   return false;</span></a>
-<a class="sourceLine" id="cb4-22" title="22">  <span class="co">// }</span></a>
-<a class="sourceLine" id="cb4-23" title="23"></a>
-<a class="sourceLine" id="cb4-24" title="24">  <span class="cf">if</span> (arg <span class="op">===</span> <span class="dv">0</span>) <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-25" title="25">  <span class="kw">const</span> nullCheck <span class="op">=</span> <span class="at">Number</span>(arg) <span class="op">===</span> <span class="dv">0</span> <span class="op">?</span> <span class="kw">true</span> : <span class="kw">false</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-26" title="26">  <span class="cf">return</span> nullCheck<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-27" title="27">  <span class="co">//  if (!arg &amp;&amp; typeof arg !== &quot;undefined&quot; &amp;&amp; arg !== 0) {</span></a>
-<a class="sourceLine" id="cb4-28" title="28">  <span class="co">//   return true;</span></a>
-<a class="sourceLine" id="cb4-29" title="29">  <span class="co">// } else {</span></a>
-<a class="sourceLine" id="cb4-30" title="30">  <span class="co">//   return false;</span></a>
-<a class="sourceLine" id="cb4-31" title="31">  <span class="co">// }</span></a>
-<a class="sourceLine" id="cb4-32" title="32"><span class="op">}</span></a>
-<a class="sourceLine" id="cb4-33" title="33"></a>
-<a class="sourceLine" id="cb4-34" title="34"><span class="co">// 测试用例</span></a>
-<a class="sourceLine" id="cb4-35" title="35"><span class="kw">var</span> expUndefined <span class="op">=</span> <span class="kw">undefined</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-36" title="36"><span class="kw">var</span> expNull <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-37" title="37"><span class="kw">var</span> expZero <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-38" title="38"><span class="co">// var expString = &#39;test&#39;;</span></a>
-<a class="sourceLine" id="cb4-39" title="39"><span class="kw">var</span> a<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-40" title="40"><span class="kw">var</span> o <span class="op">=</span> <span class="kw">new</span> <span class="at">Object</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-41" title="41"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isUndefined</span>(expUndefined))<span class="op">;</span> <span class="co">// -&gt;true</span></a>
-<a class="sourceLine" id="cb4-42" title="42"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isUndefined</span>(expNull))<span class="op">;</span> <span class="co">// -&gt;false</span></a>
-<a class="sourceLine" id="cb4-43" title="43"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isUndefined</span>(a))<span class="op">;</span> <span class="co">// -&gt;true</span></a>
-<a class="sourceLine" id="cb4-44" title="44"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isUndefined</span>(o))<span class="op">;</span> <span class="co">// -&gt;true</span></a>
-<a class="sourceLine" id="cb4-45" title="45"><span class="co">// console.log(isUndefined(expString));</span></a>
-<a class="sourceLine" id="cb4-46" title="46"><span class="co">/////////////////////////</span></a>
-<a class="sourceLine" id="cb4-47" title="47"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isNull</span>(expUndefined))<span class="op">;</span> <span class="co">// -&gt;false</span></a>
-<a class="sourceLine" id="cb4-48" title="48"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isNull</span>(expNull))<span class="op">;</span> <span class="co">// -&gt;true</span></a>
-<a class="sourceLine" id="cb4-49" title="49"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isNull</span>(expZero))<span class="op">;</span> <span class="co">// -&gt;false</span></a>
-<a class="sourceLine" id="cb4-50" title="50"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isNull</span>(a))<span class="op">;</span> <span class="co">// -&gt;false</span></a>
-<a class="sourceLine" id="cb4-51" title="51"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isNull</span>(o))<span class="op">;</span> <span class="co">// -&gt;false</span></a>
-<a class="sourceLine" id="cb4-52" title="52"></a>
-<a class="sourceLine" id="cb4-53" title="53"><span class="co">/*</span></a>
-<a class="sourceLine" id="cb4-54" title="54"><span class="co">实现一个判断传入的参数是否为 undefined 类型</span></a>
-<a class="sourceLine" id="cb4-55" title="55"><span class="co">返回一个布尔值，如果是undefied 为true，否之，为fase</span></a>
-<a class="sourceLine" id="cb4-56" title="56"><span class="co">*/</span></a>
-<a class="sourceLine" id="cb4-57" title="57"></a>
-<a class="sourceLine" id="cb4-58" title="58"><span class="kw">function</span> <span class="at">isUndefined</span>(arg) <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-59" title="59">  <span class="cf">if</span> (<span class="kw">typeof</span> arg <span class="op">===</span> <span class="st">&quot;undefined&quot;</span> <span class="op">||</span> <span class="va">JSON</span>.<span class="at">stringify</span>(arg) <span class="op">==</span> <span class="st">&quot;{}&quot;</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-60" title="60">    <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-61" title="61">  <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-62" title="62">    <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-63" title="63">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb4-64" title="64"><span class="op">}</span></a>
-<a class="sourceLine" id="cb4-65" title="65"></a>
-<a class="sourceLine" id="cb4-66" title="66"><span class="co">/*</span></a>
-<a class="sourceLine" id="cb4-67" title="67"><span class="co">实现一个判断传入的参数是否为 null 类型</span></a>
-<a class="sourceLine" id="cb4-68" title="68"><span class="co">返回一个布尔值，如果是null 为true，否之，为fase</span></a>
-<a class="sourceLine" id="cb4-69" title="69"><span class="co">*/</span></a>
-<a class="sourceLine" id="cb4-70" title="70"><span class="kw">function</span> <span class="at">isNull</span>(arg) <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-71" title="71">  <span class="cf">if</span> (arg <span class="op">===</span> <span class="dv">0</span>) <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-72" title="72">  <span class="kw">const</span> nullCheck <span class="op">=</span> <span class="at">Number</span>(arg) <span class="op">===</span> <span class="dv">0</span> <span class="op">?</span> <span class="kw">true</span> : <span class="kw">false</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-73" title="73">  <span class="cf">return</span> nullCheck<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-74" title="74"></a>
-<a class="sourceLine" id="cb4-75" title="75">  <span class="co">//  if (!arg &amp;&amp; typeof arg !== &quot;undefined&quot; &amp;&amp; arg !== 0) {</span></a>
-<a class="sourceLine" id="cb4-76" title="76">  <span class="co">//   return true;</span></a>
-<a class="sourceLine" id="cb4-77" title="77">  <span class="co">// } else {</span></a>
-<a class="sourceLine" id="cb4-78" title="78">  <span class="co">//   return false;</span></a>
-<a class="sourceLine" id="cb4-79" title="79">  <span class="co">// }</span></a>
-<a class="sourceLine" id="cb4-80" title="80"><span class="op">}</span></a>
-<a class="sourceLine" id="cb4-81" title="81"></a>
-<a class="sourceLine" id="cb4-82" title="82"><span class="co">// 测试用例</span></a>
-<a class="sourceLine" id="cb4-83" title="83"><span class="kw">var</span> expUndefined <span class="op">=</span> <span class="kw">undefined</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-84" title="84"><span class="kw">var</span> expNull <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-85" title="85"><span class="kw">var</span> expZero <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-86" title="86"><span class="kw">var</span> a<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-87" title="87"><span class="kw">var</span> o <span class="op">=</span> <span class="kw">new</span> <span class="at">Object</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-88" title="88"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isUndefined</span>(expUndefined))<span class="op">;</span> <span class="co">// -&gt;true</span></a>
-<a class="sourceLine" id="cb4-89" title="89"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isUndefined</span>(expNull))<span class="op">;</span> <span class="co">// -&gt;false</span></a>
-<a class="sourceLine" id="cb4-90" title="90"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isUndefined</span>(a))<span class="op">;</span> <span class="co">// -&gt;true</span></a>
-<a class="sourceLine" id="cb4-91" title="91"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isUndefined</span>(o))<span class="op">;</span> <span class="co">// -&gt;true</span></a>
-<a class="sourceLine" id="cb4-92" title="92"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isNull</span>(expUndefined))<span class="op">;</span> <span class="co">// -&gt;false</span></a>
-<a class="sourceLine" id="cb4-93" title="93"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isNull</span>(expNull))<span class="op">;</span> <span class="co">// -&gt;true</span></a>
-<a class="sourceLine" id="cb4-94" title="94"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isNull</span>(expZero))<span class="op">;</span> <span class="co">// -&gt;false</span></a>
-<a class="sourceLine" id="cb4-95" title="95"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isNull</span>(a))<span class="op">;</span> <span class="co">// -&gt;false</span></a>
-<a class="sourceLine" id="cb4-96" title="96"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isNull</span>(o))<span class="op">;</span> <span class="co">// -&gt;false</span></a></code></pre></div>
-<!-- tabs:end -->
-<p><a href="https://github.com/sevichee/IFE-Practice/tree/main/Day%2001-02/JavsScript">Github 源码</a></p>]]></description>
     <pubDate>Wed, 23 Mar 2022 00:27:47 +0800</pubDate>
   </item>
   
